@@ -158,6 +158,14 @@ h1{
 
 .message{
     font-weight:400;
+    overflow-wrap: normal;
+}
+
+.message-item{
+    border: 2px solid #2DBFC9;
+    border-radius:25px;
+    margin:0 10px 10px 10px;
+    padding:10px 30px;
 }
 
 .username{
@@ -206,3 +214,4 @@ h1{
 .username-input{
     border-color:#2DBFC9;
 }
+

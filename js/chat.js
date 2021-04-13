@@ -1,7 +1,8 @@
 class ChatRoom{
-    constructor(room,username){
+    constructor(room,username, color){
         this.room = room;
         this.username = username;
+        this.color = color
         this.chat = db.collection('chat');
         this.unsub;
     }
@@ -12,6 +13,7 @@ class ChatRoom{
             message: message,
             username:this.username,
             room:this.room,
+            color:this.color,
             create_at: firebase.firestore.Timestamp.fromDate(current),
         }
         //saving to firebase
@@ -32,9 +34,11 @@ class ChatRoom{
         })
     }
 
-    updateName(username){
+    updateName(username,color){
         this.username = username;
+        this.color = color
         localStorage.setItem("username",username);
+        localStorage.setItem("color", color)
     }
 
     updateRoom(room){

@@ -25,8 +25,9 @@ newNameForm.addEventListener('submit',e=>{
     e.preventDefault();
     // get name
     const newName = newNameForm.name.value.trim();
+    const color = Math.floor(Math.random()*16777215).toString(16);
     // update name
-    chatroom.updateName(newName);
+    chatroom.updateName(newName,color);
     // reset form
     newNameForm.reset();
     usernameAsk.classList.add("hidden");
@@ -45,13 +46,14 @@ rooms.addEventListener('click',(e)=>{
 
 
 // class instances
-const chatroom = new ChatRoom("general","anon");
+const chatroom = new ChatRoom("general","anon","2DBFC9");
 const chatUI = new ChatUI(chatList);
 
 const username = localStorage.username? localStorage.username: "anon";
+const color = localStorage.color? localStorage.color:"2DBFC9";
 if (username!=="anon"){
     usernameAsk.classList.add("hidden");
-    chatroom.updateName(username);
+    chatroom.updateName(username,color);
 }
 
 
