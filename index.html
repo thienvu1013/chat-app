@@ -1,0 +1,72 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Chat-with-me</title>
+</head>
+<body>
+    <img class="background-blob" src="images/blob.svg" alt="">
+    <div class= "glass-overlay">
+        <div class="container">
+            <h1>chats</h1>
+            <div class="content">
+                <div class="chat-rooms">
+                    <!-- list of chat rooms -->
+                    <button class="btn" id="general">#general</button>
+                    <button class="btn" id="gaming">#gaming</button>
+                    <button class="btn" id="music">#music</button>
+                    <button class="btn" id="bussiness">#busisness</button>
+                </div>
+                <div class="chat-content">
+                    <div class="chat-display">
+                        <!-- displaying messages -->
+                        <ul class="chat-list list-group"></ul>
+                    </div>
+                    <div class="text-input">
+                        <!-- text input -->
+                        <form class="new-chat">
+                            <div class="input-group mb-3">
+                                <input type="text" id="message" class="form-control message-bar" placeholder="your message here" aria-label="your message here" aria-describedby="button-addon2">
+                                <button class="btn btn-outline-secondary send-btn" type="submit" id="button-addon2">send</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ask-username">
+        <div class="glass-overlay">
+            <form class="new-username">
+                <input type="text" id="name" class="form-control username-input" placeholder="Hey! whats your name" >
+                <button class="btn btn-outline-secondary username-btn" type="submit">submit</button>
+            </form>
+        </div>
+    </div>
+    <script src="http://cdn.date-fns.org/v1.9.0/date_fns.min.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.0/firebase-firestore.js"></script>
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyDFOupXwr50SWNa4zw0rOWX1FNI199fzjk",
+            authDomain: "chat-app-11756.firebaseapp.com",
+            projectId: "chat-app-11756",
+            storageBucket: "chat-app-11756.appspot.com",
+            messagingSenderId: "602350916687",
+            appId: "1:602350916687:web:eb797ce1a6d4037de9863a",
+            measurementId: "G-X0H77J5BZ1"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+    </script>
+    <script src="js/chat.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
